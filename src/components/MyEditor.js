@@ -7,7 +7,7 @@
  import "@wangeditor/editor/dist/css/style.css";
  import { Editor } from "@wangeditor/editor-for-react";
 //  import { Editor, Toolbar } from "@wangeditor/editor-for-react";
- import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
  import { asBlob } from "html-docx-js-typescript";
  import { saveAs } from "file-saver";
  
