@@ -5,7 +5,8 @@
 
  import React, { useState, useEffect } from "react";
  import "@wangeditor/editor/dist/css/style.css";
- import { Editor, Toolbar } from "@wangeditor/editor-for-react";
+ import { Editor } from "@wangeditor/editor-for-react";
+//  import { Editor, Toolbar } from "@wangeditor/editor-for-react";
  import html2pdf from "html2pdf.js";
  import { asBlob } from "html-docx-js-typescript";
  import { saveAs } from "file-saver";
@@ -22,7 +23,7 @@
      }, 1500);
    }, []);
  
-   const toolbarConfig = {};
+  //  const toolbarConfig = {};
    const editorConfig = {
      placeholder: "请输入内容..."
    };
@@ -36,38 +37,38 @@
      };
    }, [editor]);
  
-   function insertText() {
-     if (editor == null) return;
-     editor.insertText(" hello ");
-   }
-   function printText() {
-     if (editor == null) return;
-     console.log(editor.getText());
-   }
-   function printHtml() {
-     if (editor == null) return;
-     console.log(editor.getHtml());
-   }
-   function printJSON() {
-     if (editor == null) return;
-     console.log(editor.children);
-   }
-   function getHeaders() {
-     if (editor == null) return;
-     const headers = editor.getElemsByTypePrefix("header");
-     console.log(headers);
-   }
-   const exportPdf = () => {
-     // 导出配置
-     const opt = {
-       margin: 1,
-       filename: "test",
-       image: { type: "jpeg", quality: 1 },
-       html2canvas: { scale: 2, useCORS: true },
-       jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
-     };
-     html2pdf().set(opt).from(editor.getHtml()).save();
-   };
+  //  function insertText() {
+  //    if (editor == null) return;
+  //    editor.insertText(" hello ");
+  //  }
+  //  function printText() {
+  //    if (editor == null) return;
+  //    console.log(editor.getText());
+  //  }
+  //  function printHtml() {
+  //    if (editor == null) return;
+  //    console.log(editor.getHtml());
+  //  }
+  //  function printJSON() {
+  //    if (editor == null) return;
+  //    console.log(editor.children);
+  //  }
+  //  function getHeaders() {
+  //    if (editor == null) return;
+  //    const headers = editor.getElemsByTypePrefix("header");
+  //    console.log(headers);
+  //  }
+  //  const exportPdf = () => {
+  //    // 导出配置
+  //    const opt = {
+  //      margin: 1,
+  //      filename: "test",
+  //      image: { type: "jpeg", quality: 1 },
+  //      html2canvas: { scale: 2, useCORS: true },
+  //      jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+  //    };
+  //    html2pdf().set(opt).from(editor.getHtml()).save();
+  //  };
  
    const saveDocx = () => {
      asBlob(editor.getHtml()).then((data) => {
